@@ -5,7 +5,7 @@ const eventSchema = new mongoose.Schema({
   lng: String,
   lat: String,
   date: String,
-  description: Boolean
+  description: String
 })
 
 module.exports = mongoose.model('Event', eventSchema)
