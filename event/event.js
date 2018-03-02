@@ -5,7 +5,7 @@ const Event = require('./model')
 const router = express.Router()
 
 router.get('/events', (req, res, next) => {
-  Event.find({})
+  Event.find({'date': {'$gte': new Date()}})
         .then(events => {
           res.json({events})
         })
