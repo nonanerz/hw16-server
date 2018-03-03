@@ -14,7 +14,7 @@ router.get('/events', (req, res, next) => {
 
 router.post('/events', (req, res, next) => {
   let data = req.body.event
-  // data.date = new Date(data.date)
+  data.date = new Date(data.date)
   new Event(data)
         .save()
         .then(event => {
