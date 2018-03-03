@@ -21,6 +21,7 @@ app.use((req, res, next) => {
   err.status = 404
   next(err)
 })
+
 app.use((error, req, res, next) => {
   if (error) {
     console.log(error)
@@ -28,6 +29,7 @@ app.use((error, req, res, next) => {
   }
   next(error)
 })
+
 app.use((err, req, res, next) => {
   res.status(err.status || 500)
   res.render('error', {

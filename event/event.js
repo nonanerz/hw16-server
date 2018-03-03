@@ -13,7 +13,7 @@ router.get('/events', (req, res, next) => {
 })
 
 router.post('/events', (req, res, next) => {
-  new Event(req.body.event)
+  new Event(req.body)
         .save()
         .then(event => {
           res.json({event})
