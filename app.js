@@ -14,11 +14,6 @@ app.listen(config.port, () => {
 app.use(bodyParser.json())
 
 app.use('/api/v1', event)
-app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*')
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
-  next()
-})
 
 // error handling
 app.use((req, res, next) => {
