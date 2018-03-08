@@ -11,7 +11,7 @@ router.use(function (req, res, next) {
 })
 
 router.get('/events', (req, res, next) => {
-  Event.find({'date': {'$gte': new Date()}})
+  Event.find()
         .then(events => {
           res.json({events})
         })
